@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit Survey</title>
+  </head>
+  <body>
+    <h1>Edit Survey</h1>
+    <form method="post">
+      {{ form.hidden_tag() }}
+      <!-- Include CSRF token -->
+      <p>{{ form.title.label }}<br />{{ form.title }}</p>
+      <!-- If editing questions, include fields for each question here -->
+      <p><input type="submit" value="Update Survey" /></p>
+    </form>
+  </body>
+</html>

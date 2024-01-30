@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Surveys</title>
+  </head>
+  <body>
+    <h1>Surveys</h1>
+    {% for survey in surveys %}
+    <div>
+      <h2>{{ survey.title }}</h2>
+      <ul>
+        {% for question in survey.questions %}
+        <li>{{ question.text }} (Type: {{ question.question_type }})</li>
+        {% else %}
+        <li>No questions found for this survey.</li>
+        {% endfor %}
+      </ul>
+      <!-- Edit link for each survey -->
+      <a href="{{ url_for('main.edit_survey', survey_id=survey.id) }}">Edit</a>
+    </div>
+    {% else %}
+    <p>No surveys found.</p>
+    {% endfor %}
+  </body>
+</html>

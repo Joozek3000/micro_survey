@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create Survey</title>
+  </head>
+  <body>
+    <h1>Create a New Survey</h1>
+    <form method="post">
+      {{ form.hidden_tag() }}
+      <p>{{ form.title.label }} {{ form.title }}</p>
+      <p>{{ form.question_text.label }} {{ form.question_text }}</p>
+      <p>{{ form.question_type.label }} {{ form.question_type }}</p>
+      <p>{{ form.submit() }}</p>
+    </form>
+  </body>
+</html>
